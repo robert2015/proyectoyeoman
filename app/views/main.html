@@ -1,0 +1,34 @@
+<div class="jumbotron">
+  <h1>'Allo, 'Allo!</h1>
+  <p class="lead">
+    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
+   Modificar nuestro texto
+  </p>
+  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+</div>
+
+<div class="container">
+    <h2>Mis Tareas</h2>
+    
+    <!--Todos input-->
+    <form role="form" ng-submit="addTarea()">
+        <div class="row">
+            <div class="input-group">
+                <input type="text" ng-model="tarea" placeholder="Que tarea quiere guardar?" class="form-control">
+                <span class="input-group-btn">
+                    <input type="submit" class="btn btn-primary" value="Agregar"> 
+                </span>
+            </div>
+        </div>
+    </form>
+    <p></p>
+    <!--Todos list a-->
+    <div ui-sortable ng-model="proyectoyeoman">
+    <p class="input-group" ng-repeat="tarea in proyectoyeoman" style="padding:5px 15px; cursor:move;">
+    <input type="text" ng-model="tarea" class="form-control">
+    <span class="input-group-btn">
+            <button class="btn btn-danger" ng-click="eliminarTarea($index)" aria-label="Eliminar">X</button>
+        </span>
+    </p>
+    </div>
+</div>
